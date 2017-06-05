@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+	<head>
+		<title>Samiha Kabir</title>
+
+		<audio autoplay>
+		  	<source src="louis-armstrong-la-vie-en-rose.mp3" type="audio/mpeg">
+		</audio>
+		
+		<style type="text/css">
+			@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+
+			* {
+			  margin:0;
+			  padding:0;
+			  outline:none;
+			  list-style:none;
+			  text-decoration:none;
+			  box-sizing:border-box;
+			}
+
+			html, body {
+			  height: 100%;
+			  width: 100%;
+			}
+
+			body {
+			  background: #000;
+			  font-family: 'Roboto', sans-serif;
+			}
+
+			.wrapper {
+			  height: 400px;
+			  width: 400px;
+			  position: relative;
+			  margin:0 auto;
+			  top:50%;
+			  transform:translateY(-50%);
+			  -webkit-transform:translateY(-50%);
+			}
+
+			.candle {
+			  height: 200px;
+			  width: 60px;
+			  background: #eaeaea;
+			  position: absolute;
+			  border-radius:6px;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			}
+
+			.candle:before {
+			  content:"";
+			  height: 30px;
+			  width: 3px;
+			  border-radius:50%;
+			  background: #eaeaea;
+			  position: absolute;
+			  left:0;right:0;top:-20px;
+			  margin:auto;
+			}
+
+			.wax-bot {
+			  background: #eaeaea;
+			  height: 30px;
+			  width: 80px;
+			  border-radius:50%;
+			  transform:translateY(100px) scaleY(0.5) scaleX(1.4);
+			  -webkit-transform:translateY(100px) scaleY(0.5) scaleX(1.4);
+			  position: absolute;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			}
+
+			.wax {
+			  background: #eaeaea;
+			  height: 30px;
+			  width: 10px;
+			  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+			  border-radius:10px;
+			  transform:translateY(-85px)translateX(0);
+			  -webkit-transform:translateY(-85px)translateX(0);
+			  position: absolute;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			}
+
+			.wax:after {
+			  content:"";
+			  background: #ececec;
+			  height: 50px;
+			  width: 14px;
+			  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+			  border-radius:0 0px 10px 10px;
+			  transform:translateY(10px)translateX(-20px);
+			  -webkit-transform:translateY(10px)translateX(-20px);
+			  position: absolute;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			}
+
+			.wax:before {
+			  content:"";
+			  background: #ececec;
+			  height: 10px;
+			  width: 10px;
+			  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+			  border-radius:50%;
+			  transform:translateY(60px)translateX(-18px);
+			  -webkit-transform:translateY(60px)translateX(-18px);
+			  position: absolute;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			}
+
+			.light {
+			  height: 180px;
+			  width: 180px;
+			  background: rgba(113, 92, 65, 0.8);
+			  border-radius:50%;
+			  position: absolute;
+			  transform:translateY(-130px);
+			  -webkit-transform:translateY(-130px);
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			  opacity: 0.8;
+			  filter:blur(40px);
+			  -webkit-filter:blur(40px);
+			}
+
+			.spark {
+			  height: 30px;
+			  width: 30px;
+			  background: rgb(255, 192, 49);
+			  border-radius:50%;
+			  position: absolute;
+			  transform:translateY(-130px);
+			  -webkit-transform:translateY(-130px);
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			  opacity: 0.8;
+			  filter: blur(3px);
+			  -webkit-filter: blur(2px);
+			  z-index: 2;
+			  animation:spark-move 4s infinite ease-in-out alternate;
+			  -webkit-animation:spark-move 4s infinite ease-in-out alternate;
+			    transform-origin:bottom;
+			  -webkit-transform-origin:bottom;
+			}
+
+
+			@keyframes spark-move {
+			  0%{transform:translateY(-130px) skew(6deg) scaleY(1.2);-webkit-transform:translateY(-130px) skew(6deg) scaleY(1.2);}
+			  100%{transform:translateY(-130px) skew(-6deg) scaleY(1.4);-webkit-transform:translateY(-130px) skew(-6deg) scaleY(1.4);}
+			}
+
+			@keyframes sparkling-move {
+			  0%{transform:translateY(-140px) scaleY(1); opacity:0.8;-webkit-transform:translateY(-140px) scaleY(1); opacity:0.8;}
+			  100%{transform:translateY(-150px) scaleY(1.4); opacity:0.4;-webkit-transform:translateY(-150px) scaleY(1.4); opacity:0.4;}
+			}
+
+			.spark:before {
+			  content:"";
+			  height: 15px;
+			  width: 15px;
+			  background: rgba(255, 255, 255,0.8);
+			  border-radius:50%;
+			  position: absolute;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			  opacity: 0.8;
+			}
+
+			.sparkling {
+			  height: 16px;
+			  width: 16px;
+			  background: rgb(255, 150, 49);
+			  border-radius:50%;
+			  position: absolute;
+			  transform:translateY(-150px);
+			  -webkit-transform:translateY(-150px);
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			  opacity: 0.8;
+			  -webkit-filter: blur(3px);
+			  animation:sparkling-move 0.4s infinite ease-in-out;
+			}
+
+			.sparkling:after {
+			  content:"";
+			  height: 16px;
+			  width: 16px;
+			  background: rgb(255, 150, 49);
+			  border-radius:50%;
+			  position: absolute;
+			  transform:translateY(-10px);
+			  -webkittransform:translateY(-10px);
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			  opacity: 0.8;
+			  -webkit-filter: blur(10px);
+			}
+
+			.wrapper:after {
+			  content:"";
+			  position: absolute;
+			  top:0;bottom:0;right:0;left:0;
+			  margin:auto;
+			  background: rgba(113, 92, 65, 0.3);
+			  border-radius:50%;
+			  filter:blur(80px);
+			  -webkit-filter:blur(80px);
+			}
+
+			.text {
+			  position: absolute;
+			  left:0;right: 0;
+			  height: 50px;
+			  bottom:-20px;
+			  z-index: 3;
+			  color:#fff;
+			  font-size:20px;
+			  text-align:center;
+			  letter-spacing:10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+		    <div class="light"></div>
+		    <div class="spark"></div>
+		    <div class="sparkling"></div>
+		    <div class="candle"></div>
+		    <div class="wax"></div>
+		    <div class="wax-bot"></div>
+		    <div class="text">Happy Birthday <br> <br> Samiha Kabir</div>
+		</div>
+	</body>
+</html>
